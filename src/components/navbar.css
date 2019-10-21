@@ -1,22 +1,21 @@
 .navbar {
-  text-align: top;
+  position: fixed;
+  top: 0;
   background-color: #77a1f5;
-  float: left;
+  width: 100%;
 }
 
-.nav-header {
+#nav-header {
   background-color: #77a1f5;
   color: white;
-
-  width: 100%;
   float: left;
   margin: 0 0 3em 0;
   padding: 0;
 }
 
-.nav-link {
+#nav-link {
   color: #f4f8fa;
 }
-.nav li {
+#nav li {
   display: inline-block;
 }

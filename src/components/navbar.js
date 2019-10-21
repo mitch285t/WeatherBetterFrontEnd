@@ -10,11 +10,13 @@ const link = {
   textDecoration: "none",
   color: "white"
 };
+
 class Navbar extends React.Component {
   render() {
     return (
       <div>
         <NavLink
+          // className="navbar"
           to="/signup"
           exact
           style={link}
@@ -25,6 +27,7 @@ class Navbar extends React.Component {
           Signup
         </NavLink>
         <NavLink
+          // className="navbar"
           to="/profile"
           exact
           style={link}
@@ -35,6 +38,7 @@ class Navbar extends React.Component {
           profile
         </NavLink>
         <NavLink
+          // className="navbar"
           to="/login"
           exact
           style={link}
