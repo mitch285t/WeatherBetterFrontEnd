@@ -48,6 +48,16 @@ class Navbar extends React.Component {
         >
           Login
         </NavLink>
+        <NavLink
+          to="/Mainpage"
+          exact
+          style={link}
+          activeStyle={{
+            background: "lightblue"
+          }}
+        >
+          Mainpage
+        </NavLink>
       </div>
     );
   }
