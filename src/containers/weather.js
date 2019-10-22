@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 
 class Weather extends Component {
-  // forecaste = () => {};
-
   render() {
-    return <div>{console.log("hello")}</div>;
+    return <div>{console.log(props.name)}</div>;
   }
 }
 export default Weather;

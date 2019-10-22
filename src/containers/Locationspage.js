@@ -7,7 +7,7 @@ const Locationspage = ({ locations }) => (
       {locations.map(({ name, id }) => (
         <li key={id}>
           <Link to={`/Weather`}>{name}</Link>
-          <Route path={"/Weather"} render={<Weather id={id} />} />
+          <Route path={"/Weather"} render={name => <Weather name={name} />} />
         </li>
       ))}
     </ul>
