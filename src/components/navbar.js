@@ -12,6 +12,11 @@ const link = {
 };
 
 class Navbar extends React.Component {
+
+  handleLogout = (event) => {
+    window.localStorage.removeItem("token")
+  }
+
   render() {
     return (
       <div>
@@ -47,6 +52,26 @@ class Navbar extends React.Component {
           }}
         >
           Login
+        </NavLink>
+        <NavLink
+          // className="navbar"
+          to="/mainpage"
+          exact
+          style={link}
+          activeStyle={{
+            background: "lightblue"
+          }}
+        >
+          Main Page
+        </NavLink>
+        <NavLink
+          // className="navbar"
+          to="/"
+          exact
+          style={link}
+          onClick={event => this.handleLogout(event)}
+        >
+          Log out
         </NavLink>
       </div>
     );
