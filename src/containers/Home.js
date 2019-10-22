@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Weather from "./Weather";
 
-const LocationURL = `http://localhost:3000/locations`;
+
 class Home extends Component {
   constructor() {
     super();
@@ -19,13 +19,7 @@ class Home extends Component {
     };
   }
   componentDidMount() {
-    fetch(LocationURL)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          locations: data.locations
-        });
-      });
+
   }
 
   render() {
