@@ -8,4 +8,4 @@ const LocationsList = ({ locations }) => {
   ));
   return <div>{renderLocations}</div>;
 };
-export default Location;
+export default LocationsList;

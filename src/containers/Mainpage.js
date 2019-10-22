@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Location from "../components/location";
+import Locationspage from "./Locationspage.js";
 
 const LocationURL = `http://localhost:3000/locations`;
-import Locationspage from "./Locationspage.js";
+
 
 class Mainpage extends Component {
   constructor(){

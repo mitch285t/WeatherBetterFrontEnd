@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Route, Link } from "react-router-dom";
-import Weather from "./Weather";
+import Weather from "./weather.js";
 const Locationspage = ({ locations }) => (
   <div>
     <ul>
