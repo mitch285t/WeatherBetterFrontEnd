@@ -1,22 +1,23 @@
 import React from "react";
-import "./navbar.css";
+// import "./navbar.css";
 import { NavLink } from "react-router-dom";
 
 const link = {
   width: "100px",
   padding: "12px",
   margin: "0 6px 6px",
-  background: "blue",
+  background: "black",
   textDecoration: "none",
   color: "white"
 };
 
-class Navbar extends React.Component {
-
-  handleLogout = (event) => {
+class Navigationbar extends React.Component {
+  handleLogout = event => {
     event.preventDefault();
-    window.localStorage.removeItem("token")
-  }
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("username");
+    window.localStorage.removeItem("email");
+  };
 
   render() {
     return (
@@ -27,7 +28,7 @@ class Navbar extends React.Component {
           exact
           style={link}
           activeStyle={{
-            background: "darkblue"
+            background: "black"
           }}
         >
           Signup
@@ -38,7 +39,7 @@ class Navbar extends React.Component {
           exact
           style={link}
           activeStyle={{
-            background: "lightblue"
+            background: "black"
           }}
         >
           profile
@@ -49,7 +50,7 @@ class Navbar extends React.Component {
           exact
           style={link}
           activeStyle={{
-            background: "lightblue"
+            background: "black"
           }}
         >
           Login
@@ -60,7 +61,7 @@ class Navbar extends React.Component {
           exact
           style={link}
           activeStyle={{
-            background: "lightblue"
+            background: "black"
           }}
         >
           Main Page
@@ -78,4 +79,4 @@ class Navbar extends React.Component {
     );
   }
 }
-export default Navbar;
+export default Navigationbar;
