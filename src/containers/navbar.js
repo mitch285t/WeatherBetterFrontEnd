@@ -14,6 +14,7 @@ const link = {
 class Navbar extends React.Component {
 
   handleLogout = (event) => {
+    event.preventDefault();
     window.localStorage.removeItem("token")
   }
 

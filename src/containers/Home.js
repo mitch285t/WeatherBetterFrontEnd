@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Weather from "./weather";
 
 
+
 class Home extends Component {
   constructor() {
     super();
@@ -18,9 +19,7 @@ class Home extends Component {
       locations: []
     };
   }
-  componentDidMount() {
-
-  }
+  
 
   render() {
     return (
