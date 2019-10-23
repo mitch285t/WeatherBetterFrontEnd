@@ -7,11 +7,12 @@
 }
 
 .App-header {
-  background-color: #9ea7b9;
+  background-color: #5cdb95;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+
   color: white;
 }
 
