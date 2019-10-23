@@ -21,6 +21,7 @@ class Mainpage extends Component {
         locations: data.locations
       });
     });
+
   }
 
 

@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Weather from "./weather";
 import Container from "react-bootstrap/Container";
 
+
 class Home extends Component {
   constructor() {
     super();
@@ -18,6 +19,10 @@ class Home extends Component {
       locations: []
     };
   }
+<<<<<<< HEAD
+  
+=======
+>>>>>>> origin/master
 
   render() {
     return (

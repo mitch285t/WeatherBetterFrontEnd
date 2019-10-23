@@ -13,6 +13,7 @@ const link = {
 
 class Navigationbar extends React.Component {
   handleLogout = event => {
+    event.preventDefault();
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("username");
     window.localStorage.removeItem("email");
