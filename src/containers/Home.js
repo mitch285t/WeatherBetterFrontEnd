@@ -27,15 +27,19 @@ class Home extends Component {
           <Router>
             {/* <Navigationbar /> */}
 
-            <Route exact path="/" render={() => <div>Home</div>} />
+            <Route exact path="/" render={() =>
+              <div>
+                <h1>Welcome to WeatherBetter!</h1>
+                <p>Here you can join a community of betters in betting on and predicting the weather. What are you waiting for? Sign up today with the link above, and make it rain!</p>
+              </div>} />
             <Route exact path="/signup" render={() => <Signup />} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/login" component={Login} />
             <Route
               exact
-              path="/Mainpage"
-              render={routerProps => (
-                <Mainpage {...routerProps} locations={this.state.locations} />
+              path="/main"
+              render={() => (
+                <Mainpage />
               )}
             />
             <Route path={"/Weather"} component={Weather} />
