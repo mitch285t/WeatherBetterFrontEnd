@@ -5,12 +5,17 @@ class Profile extends Component {
   render() {
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> a2de36e8f4bb3d457f437936cb98c14a6b57c6d8
       <div className="body-header">
         {<h3>Username: {window.localStorage.getItem("username")}</h3>}
 
         {<h3> Email: {window.localStorage.getItem("email")}</h3>}
 
         {<h4>Wallet Amount: {window.localStorage.getItem("wallet")}</h4>}
+<<<<<<< HEAD
 =======
       <div>
         <Container>
@@ -30,6 +35,10 @@ class Profile extends Component {
           </Row>
         </Container>
 >>>>>>> origin/master
+=======
+
+
+>>>>>>> a2de36e8f4bb3d457f437936cb98c14a6b57c6d8
       </div>
     );
   }
