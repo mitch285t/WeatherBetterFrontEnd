@@ -7,6 +7,10 @@ import Mainpage from "./Mainpage.js";
 import { Navbar } from "react-bootstrap";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Weather from "./weather";
+
+
+
+
 class Home extends Component {
   constructor() {
     super();
