@@ -13,7 +13,7 @@ class Weather extends Component {
 
   handleTime = time => {
     let date = new Date(time * 1000);
-    return moment(date).format("MMMM Do YYYY, HH:mm");
+    return moment(date).format("Do MMMM YYYY, HH:mm");
   };
 
   viewRound = () => {
@@ -25,7 +25,7 @@ class Weather extends Component {
   render() {
     if (!this.state.showFull) {
       return (
-        <div className="col-sm list-color">
+        <div className="col-sm list-color border border-dark">
           {this.handleTime(this.props.round.time)}
 
           <button className="btn btn-info" onClick={this.viewRound}>
