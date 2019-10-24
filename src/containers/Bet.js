@@ -1,24 +1,13 @@
 import React, { Component } from "react";
+import moment from "moment";
 
 class Bet extends Component {
   render() {
-    // bettingodds = () => {
-    //   if (user_bet === temp) {
-    //     if (user_bet === forecast_temp) {
-    //       return (payout = user_bet * 1.25);
-    //     } else if (user_bet >= forecast_temp + 5) {
-    //       return (payout = user_bet + 1.25 * (user_bet - forecast_temp));
-    //     } else if (user_bet <= forecast_temp - 5) {
-    //       return (payout = user_bet + 1.25 * (forecast_temp - user_bet));
-    //     } else if (user_bet >= forecast_temp + 10) {
-    //       return (payout = user_bet + 1.75 * (user_bet - forecast_temp));
-    //     } else if (user_bet <= forecast_temp - 10) {
-    //       return (payout = user_bet + 1.75 * (forecast_temp - user_bet));
-    //     }
-    //   }
-    // };
-
-    return <div></div>;
+    return(
+    <tr>
+      <td>{moment(this.props.bet.created_at).format("Do MMMM YYYY, HH:mm")}</td>
+      <td>{(this.props.bet.payout || parseInt(this.props.bet.payout) === 0) ? this.props.bet.payout : "Still ongoing"}</td>
+    </tr>);
   }
 }
 export default Bet;
