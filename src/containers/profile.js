@@ -58,6 +58,9 @@ class Profile extends Component {
 
         {<h3> Email: {window.localStorage.getItem("email")}</h3>}
 
+<<<<<<< HEAD
+        {<h4>Wallet Amount: {window.localStorage.getItem("wallet")}</h4>}
+=======
         {<h4>Wallet Amount: {this.state.wallet}</h4>}
         <form onSubmit={event => this.handleSubmit(event)}>
           <label>Edit username</label>
@@ -67,6 +70,7 @@ class Profile extends Component {
           <input type="submit" value="Edit user" />
         </form>
 
+>>>>>>> origin/master
       </div>
     );
   }
