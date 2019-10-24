@@ -10,8 +10,7 @@ class Signup extends React.Component {
       username: "",
       email: "",
       password: "",
-      password_confirmation: "",
-      wallet: 1.0
+      password_confirmation: ""
     };
   }
 
@@ -41,8 +40,7 @@ class Signup extends React.Component {
       username: "",
       email: "",
       password: "",
-      password_confirmation: "",
-      wallet: 1.0
+      password_confirmation: ""
     });
   };
 
