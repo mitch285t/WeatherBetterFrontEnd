@@ -1,5 +1,6 @@
 import React from "react";
-
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 const usersURL = "http://localhost:3000/users";
 
 class Signup extends React.Component {
@@ -46,48 +47,52 @@ class Signup extends React.Component {
   render() {
     return (
       <form onSubmit={event => this.handleSubmit(event)}>
-        <h1>Sign up</h1>
-        <div>
-          <input
-            type="text"
-            name="username"
-            onChange={event => this.handleChange(event)}
-            value={this.state.username}
-            placeholder="Username"
-          />
-          <label htmlFor="username">Username</label>
-        </div>
-        <div>
-          <input
-            type="text"
-            name="email"
-            onChange={event => this.handleChange(event)}
-            value={this.state.email}
-            placeholder="E-mail"
-          />
-          <label htmlFor="username">E-mail</label>
-        </div>
-        <div>
-          <input
-            type="password"
-            name="password"
-            onChange={event => this.handleChange(event)}
-            value={this.state.password}
-            placeholder="Password"
-          />
-          <label htmlFor="password">Password</label>
-        </div>
-        <div>
-          <input
-            type="password"
-            name="password_confirmation"
-            placeholder="Password confirmation"
-            value={this.state.password_confirmation}
-            onChange={event => this.handleChange(event)}
-          />
-          <label htmlFor="password">Password confirmation</label>
-        </div>
-        <input type="submit" value="Sign up" />
+        <Form.Group>
+          <Form.Label>Sign up</Form.Label>
+          <div>
+            <Form.Control
+              type="text"
+              name="username"
+              onChange={event => this.handleChange(event)}
+              value={this.state.username}
+              placeholder="Username"
+            />
+            <Form.Label>Username</Form.Label>
+          </div>
+          <div>
+            <Form.Control
+              type="text"
+              name="email"
+              onChange={event => this.handleChange(event)}
+              value={this.state.email}
+              placeholder="E-mail"
+            />
+            <Form.Label>E-mail</Form.Label>
+          </div>
+          <div>
+            <Form.Control
+              type="password"
+              name="password"
+              onChange={event => this.handleChange(event)}
+              value={this.state.password}
+              placeholder="Password"
+            />
+            <Form.Label>Password</Form.Label>
+          </div>
+          <div>
+            <Form.Control
+              type="password"
+              name="password_confirmation"
+              placeholder="Password confirmation"
+              value={this.state.password_confirmation}
+              onChange={event => this.handleChange(event)}
+            />
+            <Form.Label>Password confirmation</Form.Label>
+          </div>
+          <Button variant="secondary" type="submit" value="Sign up">
+            Submit
+          </Button>
+        </Form.Group>
       </form>
     );
   }
