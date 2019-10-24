@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import "react-bootstrap";
-import Bet from './Bet';
+import Bet from "./Bet";
 
 const usersURL = "http://localhost:3000/users/";
 const betsURL = "http://localhost:3000/bets";
@@ -60,12 +60,14 @@ class Profile extends Component {
       })
       .catch(error => console.log(error));
     fetch(betsURL, configObj)
-    .then(res => res.json())
-    .then(json => {
-      let user_bets = json.bets.filter(bet => `${bet.user_id}` === window.localStorage.getItem("id"));
-      
-      this.setState({bets: user_bets.reverse()})
-    })
+      .then(res => res.json())
+      .then(json => {
+        let user_bets = json.bets.filter(
+          bet => `${bet.user_id}` === window.localStorage.getItem("id")
+        );
+
+        this.setState({ bets: user_bets.reverse() });
+      });
   }
   render() {
     return (
@@ -102,9 +104,24 @@ class Profile extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.bets.map(bet => {return(<Bet key={bet.id} bet={bet} />)})}
+            {this.state.bets.map(bet => {
+              return <Bet key={bet.id} bet={bet} />;
+            })}
           </tbody>
         </table>
+        <iframe
+          src="https://giphy.com/embed/LdOyjZ7io5Msw"
+          width="480"
+          height="359"
+          frameBorder="0"
+          class="giphy-embed"
+          allowFullScreen
+        ></iframe>
+        <p>
+          <a href="https://giphy.com/gifs/make-it-rain-get-paid-LdOyjZ7io5Msw">
+            via GIPHY
+          </a>
+        </p>
       </div>
     );
   }

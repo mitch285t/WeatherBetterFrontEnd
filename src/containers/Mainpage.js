@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Locationspage from "./Locationspage.js";
 import Button from "react-bootstrap/Button";
-const LocationURL = `http://localhost:3000/locations`;
 
+const LocationURL = `http://localhost:3000/locations`;
+const Logo = require("./logo.png");
 class Mainpage extends Component {
   constructor() {
     super();
@@ -30,6 +31,7 @@ class Mainpage extends Component {
   render() {
     return (
       <div>
+        <img src={Logo}></img>
         <h1>Welcome back, {window.localStorage.getItem("username")}!</h1>
         <Router>
           <div className="list-color">
