@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import "../App.css";
 import "react-bootstrap";
+import Bet from './Bet';
 
 const usersURL = "http://localhost:3000/users/";
+const betsURL = "http://localhost:3000/bets";
+
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: window.localStorage.getItem("username"),
       email: window.localStorage.getItem("email"),
-      wallet: 0
+      wallet: 0,
+      bets: []
     };
   }
 
@@ -55,6 +59,13 @@ class Profile extends Component {
         this.setState({ wallet: json.user.wallet });
       })
       .catch(error => console.log(error));
+    fetch(betsURL, configObj)
+    .then(res => res.json())
+    .then(json => {
+      let user_bets = json.bets.filter(bet => `${bet.user_id}` === window.localStorage.getItem("id"));
+      
+      this.setState({bets: user_bets.reverse()})
+    })
   }
   render() {
     return (
@@ -81,6 +92,19 @@ class Profile extends Component {
           />
           <input type="submit" value="Edit user" />
         </form>
+        <h3>List of bets</h3>
+        <table className="table">
+          <caption>List of bets</caption>
+          <thead>
+            <tr>
+              <th scope="col">Time placed</th>
+              <th scope="col">Payout</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.bets.map(bet => {return(<Bet key={bet.id} bet={bet} />)})}
+          </tbody>
+        </table>
       </div>
     );
   }

@@ -25,7 +25,7 @@ class Navigationbar extends React.Component {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link className="App-link" href="/mainpage">
+              <Nav.Link className="App-link" href="/main">
                 Main Page
               </Nav.Link>
             </Nav.Item>
