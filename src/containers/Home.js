@@ -19,10 +19,6 @@ class Home extends Component {
       locations: []
     };
   }
-<<<<<<< HEAD
-  
-=======
->>>>>>> origin/master
 
   render() {
     return (
