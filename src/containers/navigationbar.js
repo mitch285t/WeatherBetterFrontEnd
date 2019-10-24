@@ -17,6 +17,7 @@ class Navigationbar extends React.Component {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("username");
     window.localStorage.removeItem("email");
+    window.localStorage.removeItem("id");
   };
 
   render() {

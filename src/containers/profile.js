@@ -13,13 +13,13 @@ class Profile extends Component {
               <h3> Email: {window.localStorage.getItem("email")}</h3>
               <h4>Wallet Amount: {window.localStorage.getItem("wallet")}</h4>
             </Col>
-            <Col xs={6}>2 of 3 (wider)</Col>
-            <Col>3 of 3</Col>
+            <Col xs={6}></Col>
+            <Col></Col>
           </Row>
           <Row>
-            <Col>1 of 3</Col>
-            <Col xs={5}>2 of 3 (wider)</Col>
-            <Col>3 of 3</Col>
+            <Col></Col>
+            <Col xs={5}></Col>
+            <Col></Col>
           </Row>
         </Container>
       </div>

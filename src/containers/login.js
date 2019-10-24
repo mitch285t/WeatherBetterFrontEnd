@@ -7,8 +7,7 @@ class Login extends Component {
     super();
     this.state = {
       username: "",
-      password: "",
-      wallet: 1.0
+      password: ""
     };
   }
 
@@ -17,9 +16,6 @@ class Login extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  floatToStr = num => {
-    return num.toString().indexOf(".") === -1 ? num.toFixed(0) : num.toString();
-  };
   handleSubmit = event => {
     event.preventDefault();
     const configObj = {
@@ -38,23 +34,17 @@ class Login extends Component {
         window.localStorage.setItem("token", json.jwt);
         window.localStorage.setItem("username", json.user.username);
         window.localStorage.setItem("email", json.user.email);
-
-        let string = this.floatToStr(json.user.wallet);
-
-        window.localStorage.setItem("wallet", string);
+        window.localStorage.setItem("id", `${json.user.id}`)
+        window.localStorage.setItem("wallet", `${json.user.wallet}`);
       })
       .catch(error => console.log(error));
     this.setState({
       username: "",
-      email: "",
-      password: "",
-      password_confirmation: "",
-      wallet: 1.0
+      password: ""
     });
   };
 
   render() {
-    console.log(window.localStorage.getItem("username"));
     return (
       <form onSubmit={event => this.handleSubmit(event)}>
         <div>
