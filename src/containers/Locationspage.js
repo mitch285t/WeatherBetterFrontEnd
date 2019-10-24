@@ -6,7 +6,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 const Locationspage = ({ locations }) => (
   <Router>
-    <div className="list-color">
+    <div className="list-color clearfix">
       <ListGroup>
         <ListGroup.Item variant="secondary">
           {locations.map(({ name, id }) => (
