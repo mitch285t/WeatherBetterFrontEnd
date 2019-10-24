@@ -34,17 +34,21 @@ class Login extends Component {
         window.localStorage.setItem("token", json.jwt);
         window.localStorage.setItem("username", json.user.username);
         window.localStorage.setItem("email", json.user.email);
-        window.localStorage.setItem("id", `${json.user.id}`)
+        window.localStorage.setItem("id", `${json.user.id}`);
         window.localStorage.setItem("wallet", `${json.user.wallet}`);
       })
       .catch(error => console.log(error));
     this.setState({
       username: "",
-      password: ""
+      email: "",
+      password: "",
+      password_confirmation: "",
+      wallet: 1.0
     });
   };
 
   render() {
+    console.log(window.localStorage.getItem("username"));
     return (
       <form onSubmit={event => this.handleSubmit(event)}>
         <div>
