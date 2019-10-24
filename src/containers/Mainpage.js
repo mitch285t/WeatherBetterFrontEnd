@@ -30,6 +30,7 @@ class Mainpage extends Component {
   render() {
     return (
       <div>
+        <h1>Welcome back, {window.localStorage.getItem("username")}!</h1>
         <Router>
           <div className="list-color">
             <Button variant="secondary">

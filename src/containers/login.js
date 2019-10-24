@@ -36,6 +36,7 @@ class Login extends Component {
         window.localStorage.setItem("email", json.user.email);
         window.localStorage.setItem("id", `${json.user.id}`);
         window.localStorage.setItem("wallet", `${json.user.wallet}`);
+        window.location.assign("http://localhost:3001/main")
       })
       .catch(error => console.log(error));
     this.setState({
