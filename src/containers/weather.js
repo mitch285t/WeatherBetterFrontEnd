@@ -25,7 +25,7 @@ class Weather extends Component {
   render() {
     if (!this.state.showFull) {
       return (
-        <div className="col-sm table-color">
+        <div className="col-sm list-color">
           {this.handleTime(this.props.round.time)}
 
           <button className="btn btn-info" onClick={this.viewRound}>
