@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 const betsURL = "http://localhost:3000/bets";
 
 export default class WeatherAndBetForm extends Component {
@@ -52,41 +53,56 @@ export default class WeatherAndBetForm extends Component {
         <p>{this.props.round.precip_probability}% chance of precipitation</p>
         <h3>Bet on this</h3>
         <form onSubmit={event => this.handleSubmit(event)}>
-          <label>Forecast</label>
-          <input
-            type="text"
-            name="forecast"
-            value={this.state.forecast}
-            onChange={event => this.handleChange(event)}
-          />
-          <br />
-          <label>Temperature</label>
-          <input
-            type="number"
-            name="temperature"
-            value={this.state.temperature}
-            onChange={event => this.handleChange(event)}
-          />
-          <br />
-          <label>Chance of precipitation</label>
-          <input
-            type="number"
-            name="precip_probability"
-            value={this.state.precip_probability}
-            onChange={event => this.handleChange(event)}
-          />
-          <br />
-          <label>Wager</label>
-          <input
-            type="number"
-            name="wager"
-            value={this.state.wager}
-            onChange={event => this.handleChange(event)}
-          />
-          <br />
-          <input type="submit" value="Bet" />
+          <Form.Group>
+            <Form.Row>
+              <Form.Label>Forecast</Form.Label>
+              <Form.Control
+                type="text"
+                name="forecast"
+                value={this.state.forecast}
+                placeholder="small text"
+                onChange={event => this.handleChange(event)}
+              />
+              <br />
+              <Form.Label>Temperature</Form.Label>
+              <Form.Control
+                type="number"
+                name="temperature"
+                value={this.state.temperature}
+                placeholder="small text"
+                onChange={event => this.handleChange(event)}
+              />
+            </Form.Row>
+            <br />
+            <Form.Row>
+              <Form.Label>Chance of precipitation</Form.Label>
+              <Form.Control
+                type="number"
+                name="precip_probability"
+                value={this.state.precip_probability}
+                placeholder="small text"
+                onChange={event => this.handleChange(event)}
+              />
+              <br />
+              <Form.Label>Wager</Form.Label>
+              <Form.Control
+                type="number"
+                name="wager"
+                value={this.state.wager}
+                placeholder="large text"
+                onChange={event => this.handleChange(event)}
+              />
+              <br />
+            </Form.Row>
+            {/* <Form.Control type="submit" value="Bet" /> */}
+            <Button variant="secondary" type="submit" value="Bet">
+              Submit
+            </Button>
+          </Form.Group>
         </form>
-        <button onClick={this.props.viewRound}>Hide</button>
+        <Button variant="secondary" onClick={this.props.viewRound}>
+          Hide
+        </Button>
       </div>
     );
   }
