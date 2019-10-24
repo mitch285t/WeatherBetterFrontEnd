@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #a5d6a7;
+  background-color: #379683;
 }
 
 .App-logo {
@@ -19,6 +19,7 @@
 
 .App-link {
   color: #f4f8fa;
+  background-color: #379683;
 }
 
 .box {
@@ -36,5 +37,20 @@
   align-items: left;
 }
 .background {
-  color: #a5d6a7;
+  background-color: #5cdb95;
+}
+.white-font {
+  color: #f4f8fa;
+}
+.box {
+  color: #5cdb95;
+}
+.list-color {
+  background-color: #05386b;
+  color: #f4f8fa;
+}
+.table-color {
+  background-color: #379683;
+  color: white;
+  border: #05386b;
 }

@@ -7,19 +7,7 @@ import Mainpage from "./Mainpage.js";
 import { Navbar } from "react-bootstrap";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Weather from "./weather";
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import Container from "react-bootstrap/Container";
 
-
->>>>>>> origin/master
-=======
-
-
-
-
->>>>>>> a2de36e8f4bb3d457f437936cb98c14a6b57c6d8
 class Home extends Component {
   constructor() {
     super();

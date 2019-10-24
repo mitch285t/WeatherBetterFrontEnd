@@ -10,9 +10,11 @@ function App() {
   return (
     <div className="App">
       <Navigationbar />
-      <div className="body-header, vh-100">
-        <div>
-          <Home className="body-header" />
+      <div className="background">
+        <div className="body-header, vh-100">
+          <div>
+            <Home className="body-header" />
+          </div>
         </div>
       </div>
     </div>

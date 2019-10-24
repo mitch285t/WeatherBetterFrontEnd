@@ -46,7 +46,7 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <form onSubmit={event => this.handleSubmit(event)}>
+      <form className="background" onSubmit={event => this.handleSubmit(event)}>
         <Form.Group>
           <Form.Label>Sign up</Form.Label>
           <div>
