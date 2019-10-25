@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Navigationbar />
       <div className="background">
-        <div className="body-header vh-100">
+        <div className=" vh-100">
           <div>
             <Home className="body-header" />
           </div>
