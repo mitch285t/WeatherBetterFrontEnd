@@ -53,3 +53,7 @@
   color: white;
   border: #05386b;
 }
+.intro {
+  align-items: center;
+  text-align: center;
+}
