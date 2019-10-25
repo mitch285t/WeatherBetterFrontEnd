@@ -25,7 +25,7 @@ class Profile extends Component {
   handleSubmit = event => {
     event.preventDefault();
     let formInputs = Object.assign({}, this.state);
-    delete formInputs.wallet;
+    delete formInputs.bets;
     let configObj = {
       method: "PATCH",
       headers: {
@@ -41,7 +41,7 @@ class Profile extends Component {
         console.log(json);
         window.localStorage.setItem("username", json.user.username);
         window.localStorage.setItem("email", json.user.email);
-        this.setState({ username: json.user.username, email: json.user.email });
+        this.setState({ username: json.user.username, email: json.user.email, wallet: json.user.wallet });
       })
       .catch(error => console.log(error));
   };
@@ -85,13 +85,23 @@ class Profile extends Component {
             onChange={event => this.handleChange(event)}
             value={this.state.username}
           />
+          <br/>
           <label>Edit email</label>
           <input
-            type="text"
+            type="textarea"
             name="email"
             onChange={event => this.handleChange(event)}
             value={this.state.email}
           />
+          <br/>
+          <label>Add or remove balance</label>
+          <input
+            type="text"
+            name="wallet"
+            onChange={event => this.handleChange(event)}
+            value={this.state.wallet}
+          />
+          <br/>
           <input type="submit" value="Edit user" />
         </form>
         <h3>List of bets</h3>
