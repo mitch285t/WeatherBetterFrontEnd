@@ -10,7 +10,8 @@ class Signup extends React.Component {
       username: "",
       email: "",
       password: "",
-      password_confirmation: ""
+      password_confirmation: "",
+      error: ""
     };
   }
 
@@ -32,8 +33,12 @@ class Signup extends React.Component {
     fetch(usersURL, configObj)
       .then(res => res.json())
       .then(json => {
-        console.log(json);
-        window.location.assign("http://localhost:3001/login")
+        if(!json.hasOwnProperty('error')){ 
+          window.location.assign("http://localhost:3001/login")
+        }
+        else {
+          this.setState({error: json.error});
+        }
       })
       .catch(error => console.log(error));
 
@@ -47,53 +52,58 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <form className="background" onSubmit={event => this.handleSubmit(event)}>
-        <Form.Group>
-          <div>
-            <Form.Control
-              type="text"
-              name="username"
-              onChange={event => this.handleChange(event)}
-              value={this.state.username}
-              placeholder="Username"
-            />
-            <Form.Label>Username</Form.Label>
-          </div>
-          <div>
-            <Form.Control
-              type="text"
-              name="email"
-              onChange={event => this.handleChange(event)}
-              value={this.state.email}
-              placeholder="E-mail"
-            />
-            <Form.Label>E-mail</Form.Label>
-          </div>
-          <div>
-            <Form.Control
-              type="password"
-              name="password"
-              onChange={event => this.handleChange(event)}
-              value={this.state.password}
-              placeholder="Password"
-            />
-            <Form.Label>Password</Form.Label>
-          </div>
-          <div>
-            <Form.Control
-              type="password"
-              name="password_confirmation"
-              placeholder="Password confirmation"
-              value={this.state.password_confirmation}
-              onChange={event => this.handleChange(event)}
-            />
-            <Form.Label>Password confirmation</Form.Label>
-          </div>
-          <Button variant="secondary" type="submit" value="Sign up">
-            Submit
-          </Button>
-        </Form.Group>
-      </form>
+      <div>
+        <form className="background" onSubmit={event => this.handleSubmit(event)}>
+          <Form.Group>
+            <div>
+              <Form.Control
+                type="text"
+                name="username"
+                onChange={event => this.handleChange(event)}
+                value={this.state.username}
+                placeholder="Username"
+              />
+              <Form.Label>Username</Form.Label>
+            </div>
+            <div>
+              <Form.Control
+                type="text"
+                name="email"
+                onChange={event => this.handleChange(event)}
+                value={this.state.email}
+                placeholder="E-mail"
+              />
+              <Form.Label>E-mail</Form.Label>
+            </div>
+            <div>
+              <Form.Control
+                type="password"
+                name="password"
+                onChange={event => this.handleChange(event)}
+                value={this.state.password}
+                placeholder="Password"
+              />
+              <Form.Label>Password</Form.Label>
+            </div>
+            <div>
+              <Form.Control
+                type="password"
+                name="password_confirmation"
+                placeholder="Password confirmation"
+                value={this.state.password_confirmation}
+                onChange={event => this.handleChange(event)}
+              />
+              <Form.Label>Password confirmation</Form.Label>
+            </div>
+            <Button variant="secondary" type="submit" value="Sign up">
+              Submit
+            </Button>
+          </Form.Group>
+        </form>
+        <ul>
+        {this.state.error.length > 0 ? <p>{this.state.error}</p> : null}
+        </ul>
+      </div>
     );
   }
 }
