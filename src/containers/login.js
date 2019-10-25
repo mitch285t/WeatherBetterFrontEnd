@@ -7,7 +7,8 @@ class Login extends Component {
     super();
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      error: ""
     };
   }
 
@@ -30,50 +31,55 @@ class Login extends Component {
     fetch(authURL, configObj)
       .then(res => res.json())
       .then(json => {
-        console.log(json);
-        window.localStorage.setItem("token", json.jwt);
-        window.localStorage.setItem("username", json.user.username);
-        window.localStorage.setItem("email", json.user.email);
-        window.localStorage.setItem("id", `${json.user.id}`);
-        window.localStorage.setItem("wallet", `${json.user.wallet}`);
-        window.location.assign("http://localhost:3001/main")
+        if(!json.hasOwnProperty('error')) {
+          console.log(json);
+          window.localStorage.setItem("token", json.jwt);
+          window.localStorage.setItem("username", json.user.username);
+          window.localStorage.setItem("email", json.user.email);
+          window.localStorage.setItem("id", `${json.user.id}`);
+          window.localStorage.setItem("wallet", `${json.user.wallet}`);
+          window.location.assign("http://localhost:3001/main")
+        }
+        else {
+          this.setState({error: json.error})
+        }
       })
       .catch(error => console.log(error));
     this.setState({
       username: "",
-      email: "",
-      password: "",
-      password_confirmation: "",
-      wallet: 1.0
+      password: ""
     });
   };
 
   render() {
     console.log(window.localStorage.getItem("username"));
     return (
-      <form onSubmit={event => this.handleSubmit(event)}>
-        <div>
-          <input
-            type="text"
-            name="username"
-            onChange={event => this.handleChange(event)}
-            value={this.state.username}
-            placeholder="Username"
-          />
-          <label htmlFor="username">Username</label>
-        </div>
-        <div>
-          <input
-            type="password"
-            name="password"
-            onChange={event => this.handleChange(event)}
-            value={this.state.password}
-            placeholder="Password"
-          />
-          <label htmlFor="password">Password</label>
-        </div>
-        <input type="submit" value="Log in" />
-      </form>
+      <div>
+        <form onSubmit={event => this.handleSubmit(event)}>
+          <div>
+            <input
+              type="text"
+              name="username"
+              onChange={event => this.handleChange(event)}
+              value={this.state.username}
+              placeholder="Username"
+            />
+            <label htmlFor="username">Username</label>
+          </div>
+          <div>
+            <input
+              type="password"
+              name="password"
+              onChange={event => this.handleChange(event)}
+              value={this.state.password}
+              placeholder="Password"
+            />
+            <label htmlFor="password">Password</label>
+          </div>
+          <input type="submit" value="Log in" />
+        </form>
+        {this.state.error.length > 0 ? <p>{this.state.error}</p> : null}
+      </div>
     );
   }
 }
